@@ -1,0 +1,14 @@
+{
+  "123" : {
+    "codigo" : "123",
+    "nombre" : "jabon",
+    "precio" : 1000.0,
+    "stock" : 13
+  },
+  "143" : {
+    "codigo" : "143",
+    "nombre" : "shampoo",
+    "precio" : 1000.0,
+    "stock" : 13
+  }
+}

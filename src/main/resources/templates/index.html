@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Json</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="container">
+    <h1 class="text-center">Registro productos</h1>
+    <form id="dataForm" class="mb-4">
+        <div class="mb-3">
+            <label for="codigoInput" class="form-label">codigo:</label>
+            <input type="text" class="form-control" id="codigoInput" name="codigo">
+        </div>
+        <div class="mb-3">
+            <label for="nombreInput" class="form-label">nombre:</label>
+            <input type="text" class="form-control" id="nombreInput" name="nombre">
+        </div>
+        <div class="mb-3">
+            <label for="precioInput" class="form-label">precio:</label>
+            <input type="number" class="form-control" id="precioInput" name="precio">
+        </div>
+        <div class="mb-3">
+            <label for="stockInput" class="form-label">stock:</label>
+            <input type="number" class="form-control" id="stockInput" name="stock">
+        </div>
+        <div class="col-12 text-center">
+            <button type="button" id="saveButton" class="btn btn-primary">Guardar</button>
+            <button type="button" id="viewButton" class="btn btn-info">Ver</button>
+            <button type="button" id="updateButton" class="btn btn-warning">Actualizar</button>
+            <button type="button" id="deleteButton" class="btn btn-danger">Eliminar</button>
+        </div>
+        
+    </form>
+    <h1 th:text="${user.nombre}"></h1>
+    <h2 th:text="${user.apellido}"></h2>
+    <li th:if="${user.email}" th:text="${user.email}"></li>
+<li th:if="${user.email == null}" th:text="${'el usuario no tiene
+email'}"></li>
+</body>
+</html>
