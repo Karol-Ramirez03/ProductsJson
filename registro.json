@@ -10,5 +10,35 @@
     "nombre" : "shampoo",
     "precio" : 1000.0,
     "stock" : 13
+  },
+  "156" : {
+    "codigo" : "156",
+    "nombre" : "crema",
+    "precio" : 1500.0,
+    "stock" : 20
+  },
+  "178" : {
+    "codigo" : "178",
+    "nombre" : "gel",
+    "precio" : 800.0,
+    "stock" : 25
+  },
+  "189" : {
+    "codigo" : "189",
+    "nombre" : "desodorante",
+    "precio" : 1200.0,
+    "stock" : 18
+  },
+  "192" : {
+    "codigo" : "192",
+    "nombre" : "lotion",
+    "precio" : 1100.0,
+    "stock" : 22
+  },
+  "204" : {
+    "codigo" : "204",
+    "nombre" : "toalla",
+    "precio" : 500.0,
+    "stock" : 30
   }
 }
