@@ -58,7 +58,10 @@ class TablaProd extends HTMLElement {
                     </thead>
                     <tbody id="table-body" >
                     </tbody>
-                </table>
+                    </table>
+                    <div class="p-3 mb-2 text-center">
+                        <button type="button" class="volver btn btn-dark"style="height: 1%; padding: 0.5%;">INICIO</button>
+                    </div>
             </div>
         `;
     }
@@ -83,35 +86,38 @@ class TablaProd extends HTMLElement {
         this.shadowRoot.querySelectorAll(".eliminarButton").forEach(boton =>{
             boton.addEventListener("click",(e)=>{
 
-            if (e.target.classList.contains("eliminarButton")) {
+                if (e.target.classList.contains("eliminarButton")) {
 
-                let tr = e.target.parentNode.parentNode
+                    let tr = e.target.parentNode.parentNode
 
-                const codigo = {
-                    codigo: tr.id
+                    const codigo = {
+                        codigo: tr.id
+                    }
+
+                    tr.remove()
+
+                    fetch("http://localHost:8080/eliminar", {
+                        method: "DELETE",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify(codigo)
+                    }).then(res => res.json)
+                    .catch(error => window.alert(error))
                 }
 
-                tr.remove()
-
-                fetch("http://localHost:8080/eliminar", {
-                    method: "DELETE",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify(codigo)
-                }).then(res => res.json)
-                .catch(error => window.alert(error))
-            }
+            })
 
         })
+        this.shadowRoot.querySelector(".volver").addEventListener("click", (e) =>{
+            location.reload()
 
-        })
+        } )
     }
     
 }
 customElements.define('datos-prod', TablaProd)
 
-// location.reload()
 botonVer.addEventListener("click", (e)=> {
     document.querySelector('.formulario').innerHTML = ``
   
