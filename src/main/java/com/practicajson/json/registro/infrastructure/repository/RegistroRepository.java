@@ -89,7 +89,6 @@ public class RegistroRepository implements RegistroService {
             rootNode.remove(id);
             //elimina el dato con la clave correspondiente
             guardarDatos(rootNode);
-            System.out.println("Registro eliminado de registro.json");
         } else {
             System.out.println("Registro no encontrado.");
         }

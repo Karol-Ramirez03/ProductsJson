@@ -13,6 +13,7 @@ import com.practicajson.json.registro.domain.service.RegistroService;
 import com.practicajson.json.registro.infrastructure.repository.RegistroRepository;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -40,9 +41,15 @@ public class ControllerRestController {
         addRegistroUseCase.execute(registro);
     }
 
-    @GetMapping("data")
+    @GetMapping("/data")
     public List<Registro> visualizarRegistro(){
         return allRegistroUseCase.execute();
+    }
+
+    @DeleteMapping("/eliminar")
+    public void eliminar(@RequestBody Registro registro){
+        String codigo = registro.getCodigo();
+        deleteRegistroUseCase.execute(codigo);
     }
     
 }

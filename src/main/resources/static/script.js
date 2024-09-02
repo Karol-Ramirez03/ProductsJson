@@ -13,7 +13,6 @@ botonGuardar.addEventListener("click", (e)=>{
     const precio = formulario.get('precio');
     const stock = formulario.get('stock')
 
-    window.alert("confirmar")
     const api = "http://localhost:8080/agregar"
 
 
@@ -39,8 +38,10 @@ botonGuardar.addEventListener("click", (e)=>{
     };
     
     enviarArchivoJson();
+    form.reset()
 })
-class CardHero extends HTMLElement {
+
+class TablaProd extends HTMLElement {
     connectedCallback() {
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.innerHTML = /* html */ `
@@ -71,29 +72,50 @@ class CardHero extends HTMLElement {
                 <td>${item.nombre}</td>
                 <td>${item.precio}</td>
                 <td>${item.stock}</td>
+                <td>
                 <button type="button" class="eliminarButton btn btn-danger"style="height: 2%; padding: 1%; width: 100%;">X</button>
+                </td>
             `;
             tbody.appendChild(row);
         });
     }
     eliminar(){
-        const tbody2 = this.shadowRoot.querySelector("#table-body");
+        this.shadowRoot.querySelectorAll(".eliminarButton").forEach(boton =>{
+            boton.addEventListener("click",(e)=>{
 
-        tbody2.addEventListener("click",(e)=>{
-        window.alert('validar')
-        window.alert(e.id)
-})
+            if (e.target.classList.contains("eliminarButton")) {
+
+                let tr = e.target.parentNode.parentNode
+
+                const codigo = {
+                    codigo: tr.id
+                }
+
+                tr.remove()
+
+                fetch("http://localHost:8080/eliminar", {
+                    method: "DELETE",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(codigo)
+                }).then(res => res.json)
+                .catch(error => window.alert(error))
+            }
+
+        })
+
+        })
     }
     
 }
-customElements.define('card-hero', CardHero)
+customElements.define('datos-prod', TablaProd)
 
 // location.reload()
 botonVer.addEventListener("click", (e)=> {
     document.querySelector('.formulario').innerHTML = ``
-    
-    window.alert('validar')
-    const card = document.createElement('card-hero')
+  
+    const card = document.createElement('datos-prod')
     container.insertAdjacentElement('beforeend', card)
 
     fetch("http://localhost:8080/data", {

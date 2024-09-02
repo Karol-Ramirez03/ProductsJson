@@ -47,34 +47,10 @@
     "precio" : 100.0,
     "stock" : 50
   },
-  "null" : {
-    "codigo" : null,
-    "nombre" : "Producto y",
-    "precio" : 100.0,
-    "stock" : 50
-  },
-  "11" : {
-    "codigo" : "11",
-    "nombre" : "Producto y",
-    "precio" : 100.0,
-    "stock" : 50
-  },
   "9000" : {
     "codigo" : "9000",
     "nombre" : "Producto y",
     "precio" : 100.0,
     "stock" : 50
-  },
-  "45" : {
-    "codigo" : "45",
-    "nombre" : "lo logramos?",
-    "precio" : 5000.0,
-    "stock" : 5000
-  },
-  "4500" : {
-    "codigo" : "4500",
-    "nombre" : "si",
-    "precio" : 5000.0,
-    "stock" : 5000
   }
 }
