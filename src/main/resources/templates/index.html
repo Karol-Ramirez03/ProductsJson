@@ -10,29 +10,33 @@
     <script type="module" src="script.js" defer></script>
 </head>
 <body class="container">
-    <h1 class="text-center">Registro productos</h1>
-    <form id="dataForm" class="mb-4">
-        <div class="mb-3">
-            <label for="codigoInput" class="form-label">codigo:</label>
-            <input type="text" class="form-control" id="codigoInput" name="codigo">
-        </div>
-        <div class="mb-3">
-            <label for="nombreInput" class="form-label">nombre:</label>
-            <input type="text" class="form-control" id="nombreInput" name="nombre">
-        </div>
-        <div class="mb-3">
-            <label for="precioInput" class="form-label">precio:</label>
-            <input type="number" class="form-control" id="precioInput" name="precio">
-        </div>
-        <div class="mb-3">
-            <label for="stockInput" class="form-label">stock:</label>
-            <input type="number" class="form-control" id="stockInput" name="stock">
-        </div>
-        <div class="col-12 text-center">
-            <button type="button" id="guardarButton" class="btn btn-primary">Guardar</button>
-            <button type="button" id="verButton" class="btn btn-info">Ver</button>
-        </div>
-        
-    </form>
+    <div class="formulario">
+
+        <h1 class="text-center">Registro productos</h1>
+        <form id="dataForm" class="mb-4">
+            <div class="mb-3">
+                <label for="codigoInput" class="form-label">codigo:</label>
+                <input type="text" class="form-control" id="codigoInput" name="codigo">
+            </div>
+            <div class="mb-3">
+                <label for="nombreInput" class="form-label">nombre:</label>
+                <input type="text" class="form-control" id="nombreInput" name="nombre">
+            </div>
+            <div class="mb-3">
+                <label for="precioInput" class="form-label">precio:</label>
+                <input type="number" class="form-control" id="precioInput" name="precio">
+            </div>
+            <div class="mb-3">
+                <label for="stockInput" class="form-label">stock:</label>
+                <input type="number" class="form-control" id="stockInput" name="stock">
+            </div>
+            <div class="col-12 text-center">
+                <button type="button" id="guardarButton" class="btn btn-primary">Guardar</button>
+                <button type="button" id="verButton" class="btn btn-info">Ver</button>
+            </div>
+            
+        </form>
+    </div>
+
 </body>
 </html>
