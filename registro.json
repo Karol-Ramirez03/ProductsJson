@@ -40,5 +40,23 @@
     "nombre" : "toalla",
     "precio" : 500.0,
     "stock" : 30
+  },
+  "0024" : {
+    "codigo" : "0024",
+    "nombre" : "Producto y",
+    "precio" : 100.0,
+    "stock" : 50
+  },
+  "null" : {
+    "codigo" : null,
+    "nombre" : "Producto y",
+    "precio" : 100.0,
+    "stock" : 50
+  },
+  "11" : {
+    "codigo" : "11",
+    "nombre" : "Producto y",
+    "precio" : 100.0,
+    "stock" : 50
   }
 }

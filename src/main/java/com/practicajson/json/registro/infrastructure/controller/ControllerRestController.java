@@ -2,15 +2,23 @@ package com.practicajson.json.registro.infrastructure.controller;
 
 
 import java.util.List;
+import java.util.Map;
 
-import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.web.bind.annotation.RequestBody;
 import com.practicajson.json.registro.application.AddRegistroUseCase;
 import com.practicajson.json.registro.application.AllRegistroUseCase;
 import com.practicajson.json.registro.application.DeleteRegistroUseCase;
 import com.practicajson.json.registro.domain.entity.Registro;
 import com.practicajson.json.registro.domain.service.RegistroService;
 import com.practicajson.json.registro.infrastructure.repository.RegistroRepository;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+
+
+
 
 @RestController
 public class ControllerRestController {
@@ -26,24 +34,15 @@ public class ControllerRestController {
         this.allRegistroUseCase = new AllRegistroUseCase(registroService);
     };
    
-    
-    public void saveRegistro() {
-        Registro registro = new Registro("1", "celular", 100,3);
+
+    @PostMapping("/agregar")
+    public void creaRegistro(@RequestBody Registro registro) {
         addRegistroUseCase.execute(registro);
     }
-    public void deleteResgistro(String cod) {
-        deleteRegistroUseCase.execute(cod);
-    }
-    public void all(){
-        List<Registro> datos = allRegistroUseCase.execute();
-        for (Registro registro : datos) {
-            
-            System.out.println(registro.getCodigo());
-            System.out.println(registro.getNombre());
-            System.out.println(registro.getPrecio());
-            System.out.println(registro.getStock());
-            System.out.println("-------------");
-        }
-    }
 
+    @GetMapping("data")
+    public List<Registro> visualizarRegistro(){
+        return allRegistroUseCase.execute();
+    }
+    
 }

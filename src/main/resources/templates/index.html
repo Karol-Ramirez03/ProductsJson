@@ -7,6 +7,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script type="module" src="script.js" defer></script>
 </head>
 <body class="container">
     <h1 class="text-center">Registro productos</h1>
@@ -28,17 +29,10 @@
             <input type="number" class="form-control" id="stockInput" name="stock">
         </div>
         <div class="col-12 text-center">
-            <button type="button" id="saveButton" class="btn btn-primary">Guardar</button>
-            <button type="button" id="viewButton" class="btn btn-info">Ver</button>
-            <button type="button" id="updateButton" class="btn btn-warning">Actualizar</button>
-            <button type="button" id="deleteButton" class="btn btn-danger">Eliminar</button>
+            <button type="button" id="guardarButton" class="btn btn-primary">Guardar</button>
+            <button type="button" id="verButton" class="btn btn-info">Ver</button>
         </div>
         
     </form>
-    <h1 th:text="${user.nombre}"></h1>
-    <h2 th:text="${user.apellido}"></h2>
-    <li th:if="${user.email}" th:text="${user.email}"></li>
-<li th:if="${user.email == null}" th:text="${'el usuario no tiene
-email'}"></li>
 </body>
 </html>
